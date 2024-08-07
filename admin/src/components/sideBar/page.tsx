@@ -81,8 +81,6 @@ const page = () => {
       </ul>
    </div>
 </aside>
-
-
         </>
   )
 }
