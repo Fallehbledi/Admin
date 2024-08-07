@@ -62,7 +62,7 @@
 
 import { revalidatePath } from 'next/cache';
 
-const handleUpdate = async (id: any, price:number,data: FormData) => {
+const handleUpdate = async (id: any, price:any,data: FormData) => {
   "use server";
   const response = await fetch(`http://127.0.0.1:5000/api/price/update/${id}`, {
     method: 'PUT',
