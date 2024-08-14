@@ -224,10 +224,10 @@ export default function Page() {
               <tbody>
               {groupedPrices[day].map((item) => (
     <tr
-      className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+      className=" border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 text-black dark:text-white"
       key={item.id}
     >
-      <td className="px-6 py-3 w-1/5">
+      <td className="px-6 py-3 w-1/5 text-black">
         <img
           src={item.image}
           alt={item.name}
@@ -242,7 +242,7 @@ export default function Page() {
             name="price"
             value={formData.price || ""}
             onChange={handleInputChange}
-            className="w-full bg-white rounded border border-gray-400 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-900 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            className="w-full rounded border border-gray-400 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-black py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
           />
         ) : (
           `${item.price} TND/kg`
@@ -271,7 +271,7 @@ export default function Page() {
             </button>
           )
         ) : (
-          <span className="text-gray-400"></span>
+          <span className="text-black"></span>
         )}
       </td>
     </tr>
