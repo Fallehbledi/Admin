@@ -206,14 +206,14 @@ const SignIn: React.FC = () => {
                 <input
                   type="submit"
                   value="Sign In"
-                  className="w-full cursor-pointer rounded-lg border border-green-700 bg-green-500 p-4 text-white transition hover:bg-opacity-90"
+                  className="w-full cursor-pointer rounded-lg border border-green-700 bg-green-800 p-4 text-white transition hover:bg-opacity-90"
                 />
               </div>
 
               {status === "loading" && <p>Loading...</p>}
               {status === "failed" && <p className="text-red-500">{error}</p>}
               {status === "succeeded" && (
-                <p className="text-green-500">Login succeeded</p>
+                <p className="text-black">Login succeeded</p>
               )}
             </form>
           </div>
