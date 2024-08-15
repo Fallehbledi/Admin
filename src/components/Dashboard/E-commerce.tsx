@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import CardDataStats from "../CardDataStats";
 import { getFarmers, getExperts, getNews } from "@/app/hooks";
 import Link from "next/link";
+import ChartOne from "@/app/marketprice/chart";
 
 const ECommerce: React.FC = () => {
   const [farmers, setFarmers] = useState<any>([]);
@@ -41,7 +42,7 @@ const ECommerce: React.FC = () => {
   useEffect(() => {}, []);
   return (
     <>
-      <div className="m-0 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-3 2xl:gap-7.5">
+      <div className="m-0 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-3 2xl:gap-7.5 ">
         <CardDataStats title="Total farmers" total={farmers?.length}>
           <svg
             className="fill-primary dark:fill-white"
@@ -153,6 +154,7 @@ const ECommerce: React.FC = () => {
             </div>
           </div>
         ))}
+        <ChartOne/>
       </div>
     </>
   );
