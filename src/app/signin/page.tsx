@@ -21,9 +21,9 @@ const SignIn: React.FC = () => {
 
   return (
     <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-      <div className="flex flex-wrap items-center">
+      <div className="flex h-screen flex-wrap items-center">
         <div className="hidden w-full xl:block xl:w-1/2">
-          <div className="px-26 py-17.5 text-center">
+          <div className="flex flex-col items-center px-26 py-17.5 text-center">
             <Link className="mb-5.5 inline-block" href="/">
               <Image
                 className="hidden dark:block"
@@ -202,7 +202,7 @@ const SignIn: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mb-5">
+              <div className="mb-5 font-bold">
                 <input
                   type="submit"
                   value="Sign In"

@@ -170,7 +170,7 @@ const ChatPage = () => {
               />
               <button
                 type="submit"
-                className="rounded-r-md bg-green-500 px-4 py-2 text-white hover:bg-green-600 focus:bg-green-600 focus:outline-none"
+                className="rounded-r-md bg-green-900 px-4 py-2 text-white hover:bg-green-800 focus:bg-green-900 focus:outline-none"
                 disabled={!receiver.id}
               >
                 Send

@@ -113,49 +113,7 @@ const ECommerce: React.FC = () => {
       <div className="mt-10 flex justify-end">
         {news.length && <Link href={"/news"}>View more</Link>}
       </div>
-      <div className="mt-2 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {news?.map((item) => (
-          <div
-            key={item.id}
-            className="border-gray-200 dark:bg-gray-800 dark:border-gray-700 m-w-50 transform-gpu rounded-lg border shadow-lg transition-transform duration-300 hover:scale-105"
-          >
-            <img className="rounded-t-lg" src={item.image} alt="" />
-            <div className="p-5">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-black dark:text-white">
-                {item.title}
-              </h5>
-              <div className="group relative">
-                <p
-                  className="mb-4 max-h-20 overflow-hidden font-normal text-black dark:text-white"
-                  style={{
-                    display: "-webkit-box",
-                    WebkitBoxOrient: "vertical",
-                    WebkitLineClamp: 3, // Limits the text to 3 lines
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                    whiteSpace: "normal",
-                  }}
-                >
-                  {item.content}
-                </p>
-                {item.content.length > 100 && (
-                  <div
-                    className="m-w-80 absolute left-0 z-10 hidden rounded-lg bg-black p-2 text-sm text-white shadow-lg group-hover:block"
-                    style={{
-                      bottom: "-10%",
-                      left: "-10%",
-                      transform: "translateY(50px)",
-                    }}
-                  >
-                    {item.content}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        ))}
         <ChartOne/>
-      </div>
     </>
   );
 };

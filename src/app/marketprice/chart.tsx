@@ -12,48 +12,49 @@ interface Price {
   createdAt: string;
 }
 
-const ChartOne: React.FC<{ }> = () => {
+const ChartOne: React.FC<{ }> = ({ }) => {
   const [series, setSeries] = useState<any[]>([]);
   const [categories, setCategories] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://127.0.0.1:5000/api/price/allday");
+      const response = await fetch("http://127.0.0.1:5000/api/price/all");
       const data: Price[] = await response.json();
-
+  
       const currentDate = new Date();
-      const oneWeekAgo = new Date(currentDate);
-      oneWeekAgo.setDate(currentDate.getDate() - 6); 
-     
-      const categories = Array.from({ length: 7 }, (_, i) => {
-        const date = new Date(oneWeekAgo);
-        date.setDate(oneWeekAgo.getDate() + i);
+      const startDate = new Date(currentDate);
+      startDate.setDate(currentDate.getDate() - 6); // One week ago
+      const endDate = new Date(currentDate);
+      endDate.setDate(currentDate.getDate() + 6); // Next day
+  
+      const categories = Array.from({ length: 10 }, (_, i) => {
+        const date = new Date(startDate);
+        date.setDate(startDate.getDate() + i);
         return date.toLocaleDateString("en-US", { weekday: "short" });
       });
-
-     
-      const orderedCategories = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  
+      const orderedCategories = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]; // Adjust as needed
       setCategories(orderedCategories);
-
+  
       const filteredData = data.filter((item) => {
         const createdAt = new Date(item.createdAt);
-        return createdAt >= oneWeekAgo && createdAt <= currentDate;
+        return createdAt >= startDate && createdAt <= endDate;
       });
-
+  
       const groupedData = filteredData.reduce((acc, item) => {
         const createdAt = new Date(item.createdAt);
         const dayOfWeek = createdAt.toLocaleDateString("en-US", { weekday: "short" });
-
+  
         if (!acc[item.name]) {
-          acc[item.name] = { name: item.name, data: new Array(7).fill(null) };
+          acc[item.name] = { name: item.name, data: new Array(8).fill(null) }; // Adjust to accommodate future dates
         }
-
+  
         const dayIndex = orderedCategories.indexOf(dayOfWeek);
         acc[item.name].data[dayIndex] = item.price;
-
+  
         return acc;
       }, {} as Record<string, { name: string; data: (number | null)[] }>);
-
+  
       const seriesData = Object.values(groupedData).map((item, index) => ({
         name: item.name,
         type: "line",
@@ -65,17 +66,16 @@ const ChartOne: React.FC<{ }> = () => {
           width: 2,
         },
         itemStyle: {
-          color: `hsl(${(index * 60) % 360}, 70%, 50%)`, // Different color for each product
+          color: `hsl(${(index * 60) % 360}, 70%, 50%)`,
           borderWidth: 2,
         },
       }));
-
+  
       setSeries(seriesData);
     };
-
+  
     fetchData();
   }, []);
-
   const getOption = (): EChartsOption => ({
     tooltip: {
       trigger: "axis",
@@ -103,7 +103,7 @@ const ChartOne: React.FC<{ }> = () => {
     yAxis: {
       type: "value",
       min: 0,
-      max: 10000,
+      max: 5000,
     },
     grid: {
       containLabel: true,

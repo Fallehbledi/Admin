@@ -47,8 +47,8 @@ export const signin = createAsyncThunk<SigninResponse, SigninRequest>(
       credentials.router.push("/");
       return response.data;
     } catch (err) {
-      if (err.response) {
-        return rejectWithValue(err.response.data);
+      if (err?.response) {
+        return rejectWithValue(err?.response?.data.error);
       } else {
         return rejectWithValue({ message: "Network error" });
       }
