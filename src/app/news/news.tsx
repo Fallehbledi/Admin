@@ -98,7 +98,7 @@ const NewsList = () => {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="h-16 w-16 rounded object-cover"
+                    className="h-30 w-50 rounded object-cover"
                   />
                 </td>
                 <td className="border-b border-[#eee] px-4 py-5 pl-9 dark:border-strokedark xl:pl-11">
@@ -107,7 +107,16 @@ const NewsList = () => {
                   </h5>
                 </td>
                 <td className="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                  <p className="text-black dark:text-white">{item.content}</p>
+                  <p
+                    className="overflow-hidden text-ellipsis text-black dark:text-white"
+                    style={{
+                      display: "-webkit-box",
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: "vertical",
+                    }}
+                  >
+                    {item.content}
+                  </p>
                 </td>
                 <td className="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                   <div className="flex items-center space-x-3.5">
@@ -152,7 +161,8 @@ const NewsList = () => {
         </table>
         {expandedId && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="dark:bg-gray-800 w-full max-w-md space-y-4 rounded-lg bg-white p-5">
+            <div className="dark:bg-gray-800 w-1/3 space-y-4 rounded-lg bg-white p-5">
+              <h1 className="mb-4 text-2xl font-bold">Update News</h1>
               <input
                 type="text"
                 name="title"
@@ -167,7 +177,7 @@ const NewsList = () => {
                 value={formData.content || ""}
                 onChange={handleInputChange}
                 placeholder="Content"
-                className="text-gray-900 dark:bg-gray-700 w-full rounded border px-3 py-2 dark:border-black dark:text-black"
+                className="text-gray-900 dark:bg-gray-700 h-80 w-full rounded border px-3 py-2 dark:border-black dark:text-black"
               ></textarea>
               <input
                 type="text"
@@ -177,7 +187,7 @@ const NewsList = () => {
                 placeholder="Image URL"
                 className="text-gray-900 dark:bg-gray-700 w-full rounded border px-3 py-2 dark:border-black dark:text-black"
               />
-              <div className="flex space-x-4">
+              <div className="flex-end flex space-x-4">
                 <button
                   onClick={() => handleUpdate(expandedId)}
                   className="transform rounded-lg bg-green-800 px-3 py-2 text-sm font-medium text-white transition duration-300 hover:scale-105 hover:bg-green-700 focus:outline-none focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-500 dark:focus:ring-green-800"

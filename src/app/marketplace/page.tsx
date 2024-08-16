@@ -104,19 +104,19 @@ const MarketPlace = () => {
               <th scope="col" className="px-16 py-3">
                 <span className="sr-only">Image</span>
               </th>
-              <th scope="col" className="py-4">
+              <th scope="col" className="px-16 py-3">
                 Product
               </th>
-              <th scope="col" className="px-16 py-4 ">
+              <th scope="col" className="px-16 py-3 ">
                 Quantity
               </th>
-              <th scope="col" className="py-3">
+              <th scope="col" className="px-16 py-3">
                 Category
               </th>
-              <th scope="col" className="py-3">
+              <th scope="col" className="px-16 py-3">
                 Price
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-16 py-3 ">
                 Action
               </th>
             </tr>

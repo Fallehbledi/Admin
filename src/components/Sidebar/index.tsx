@@ -77,7 +77,7 @@ const menuGroups = [
             />
           </svg>
         ),
-        label: "Create expert",
+        label: "Create expert account",
         route: "/forms/form-layout",
         permission: "admin",
       },
