@@ -29,8 +29,7 @@ const ECommerce: React.FC = () => {
     async function fetchData() {
       try {
         const newsList = await getNews();
-        const selectNews = newsList.slice(newsList.length - 3, newsList.length);
-        setNews(selectNews);
+        setNews(newsList);
       } catch (error) {
         console.error("Failed to fetch data", error);
       }

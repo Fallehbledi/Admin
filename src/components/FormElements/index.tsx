@@ -12,14 +12,14 @@ const AddProduct = () => {
   };
   return (
     <>
-      <h2 className="mb-4 text-center text-2xl font-bold text-black md:mb-6 md:text-left">
+      <h2 className="mb-4 text-center text-2xl font-bold text-black md:mb-6 md:text-left dark:text-white">
         Add New Product
       </h2>
-      <div className="mx-auto rounded bg-white p-6 shadow-md md:p-8">
+      <div className="mx-auto rounded p-6 shadow-md md:p-8">
         <form action={handleAddProduct}>
           <div className="mb-4">
             <label
-              className="text-gray-700 mb-2 block text-sm font-bold"
+              className="text-gray-700 mb-2 block text-sm text-black font-bold dark:text-white"
               htmlFor="productName"
             >
               Product Name
@@ -35,7 +35,7 @@ const AddProduct = () => {
 
           <div className="mb-4">
             <label
-              className="text-gray-700 mb-2 block text-sm font-bold"
+              className="text-gray-700 mb-2 block text-sm text-black font-bold dark:text-white"
               htmlFor="category"
             >
               Category
@@ -51,7 +51,7 @@ const AddProduct = () => {
 
           <div className="mb-4">
             <label
-              className="text-gray-700 mb-2 block text-sm font-bold"
+              className="text-gray-700 mb-2 block text-sm text-black font-bold dark:text-white"
               htmlFor="price"
             >
               Price
@@ -67,7 +67,7 @@ const AddProduct = () => {
 
           <div className="mb-4">
             <label
-              className="text-gray-700 mb-2 block text-sm font-bold"
+              className="text-gray-700 mb-2 block text-sm text-black font-bold dark:text-white"
               htmlFor="quantity"
             >
               Quantity
@@ -83,7 +83,7 @@ const AddProduct = () => {
 
           <div className="mb-4">
             <label
-              className="text-gray-700 mb-2 block text-sm font-bold"
+              className="text-gray-700 mb-2 block text-sm text-black font-bold dark:text-white"
               htmlFor="description"
             >
               Description
@@ -98,7 +98,7 @@ const AddProduct = () => {
 
           <div className="mb-4">
             <label
-              className="text-gray-700 mb-2 block text-sm font-bold"
+              className="text-gray-700 mb-2 block text-sm text-black font-bold dark:text-white"
               htmlFor="image"
             >
               Upload Image
@@ -111,7 +111,7 @@ const AddProduct = () => {
             />
           </div>
           <button
-            className="hover:bg-green-500-dark mt-4 w-full rounded-lg bg-green-500 px-5 py-3 text-white transition"
+            className="hover:bg-green-500-dark mt-4 w-full rounded-lg bg-green-900 px-5 py-3 text-white font-bold transition"
             type="submit"
           >
             Create

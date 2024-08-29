@@ -21,7 +21,7 @@ const FormLayout = () => {
             <div className="p-6.5">
               <form action={handleAddExpert}>
                 <div className="mb-4.5">
-                  <label className="mb-3 block text-sm font-medium text-black dark:text-white">
+                  <label className="mb-3 block text-sm font-bold text-black dark:text-white">
                     First Name
                   </label>
                   <input
@@ -33,7 +33,7 @@ const FormLayout = () => {
                   />
                 </div>
                 <div className="mb-4.5">
-                  <label className="mb-3 block text-sm font-medium text-black dark:text-white">
+                  <label className="mb-3 block text-sm font-bold text-black dark:text-white">
                     Last Name
                   </label>
                   <input
@@ -46,7 +46,7 @@ const FormLayout = () => {
                 </div>
 
                 <div className="mb-4.5">
-                  <label className="mb-3 block text-sm font-medium text-black dark:text-white">
+                  <label className="mb-3 block text-sm font-bold text-black dark:text-white">
                     Email
                   </label>
                   <input
@@ -58,7 +58,7 @@ const FormLayout = () => {
                   />
                 </div>
                 <div className="mb-4.5">
-                  <label className="mb-3 block text-sm font-medium text-black dark:text-white">
+                  <label className="mb-3 block text-sm font-bold text-black dark:text-white">
                     Phone Number
                   </label>
                   <input
@@ -70,7 +70,7 @@ const FormLayout = () => {
                   />
                 </div>
                 <div className="mb-4.5">
-                  <label className="mb-3 block text-sm font-medium text-black dark:text-white">
+                  <label className="mb-3 block text-sm font-bold text-black dark:text-white">
                     Password
                   </label>
                   <input
@@ -82,7 +82,7 @@ const FormLayout = () => {
                   />
                 </div>
                 <div>
-                  <label className="mb-3 block text-sm font-medium text-black dark:text-white">
+                  <label className="mb-3 block text-sm font-bold text-black dark:text-white">
                     Bio
                   </label>
                   <textarea
@@ -107,7 +107,7 @@ const FormLayout = () => {
                     name="image"
                   />
                 </div>
-                <button className="flex w-full justify-center rounded bg-green-500 p-3 font-medium text-gray hover:bg-opacity-90">
+                <button className="flex w-full justify-center rounded bg-green-900 p-3 font-bold text-gray hover:bg-opacity-90">
                   Create Expert
                 </button>
               </form>

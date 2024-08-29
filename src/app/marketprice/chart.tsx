@@ -23,17 +23,17 @@ const ChartOne: React.FC<{ }> = ({ }) => {
   
       const currentDate = new Date();
       const startDate = new Date(currentDate);
-      startDate.setDate(currentDate.getDate() - 6); // One week ago
+      startDate.setDate(currentDate.getDate() - 7); // One week ago
       const endDate = new Date(currentDate);
-      endDate.setDate(currentDate.getDate() + 6); // Next day
+      endDate.setDate(currentDate.getDate() + 7); // Next day
   
-      const categories = Array.from({ length: 10 }, (_, i) => {
+      const categories = Array.from({ length: 12 }, (_, i) => {
         const date = new Date(startDate);
         date.setDate(startDate.getDate() + i);
         return date.toLocaleDateString("en-US", { weekday: "short" });
       });
   
-      const orderedCategories = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]; // Adjust as needed
+      const orderedCategories = ["Sat","Sun","Mon", "Tue", "Wed", "Thu", "Fri",]; // Adjust as needed
       setCategories(orderedCategories);
   
       const filteredData = data.filter((item) => {
@@ -46,7 +46,7 @@ const ChartOne: React.FC<{ }> = ({ }) => {
         const dayOfWeek = createdAt.toLocaleDateString("en-US", { weekday: "short" });
   
         if (!acc[item.name]) {
-          acc[item.name] = { name: item.name, data: new Array(8).fill(null) }; // Adjust to accommodate future dates
+          acc[item.name] = { name: item.name, data: new Array(12).fill(null) }; // Adjust to accommodate future dates
         }
   
         const dayIndex = orderedCategories.indexOf(dayOfWeek);
